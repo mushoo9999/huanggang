@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+    <meta http-equiv="expires" content="0">
+    <script src="jquery-1.10.1.min.js"></script>
+    <title>黄冈一体化</title>
+    <style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .block {
+        display: block
+    }
+    
+    body {
+        background-color: #edf3f6
+    }
+    
+    .ul2 {
+        width: 280px;
+        list-style: none;
+        float: left
+    }
+    
+    .ul2 li {
+        margin-bottom: 1px;
+        position: relative;
+        cursor: pointer;
+        transition: all .4s
+    }
+    
+    img {
+        display: block;
+    }
+    
+    .ul2 li.on:after {
+        content: "";
+        background: url(img/箭头.png) no-repeat center center;
+        width: 20px;
+        height: 27px;
+        position: absolute;
+        left: -17px;
+        top: 57px;
+    }
+    
+    .mb20 {
+        margin-bottom: 20px;
+    }
+    
+    .ul3:after {
+        content: "";
+        display: block;
+        clear: both
+    }
+    
+    .aaa,
+    .bbb {
+        padding: 31px;
+    }
+    
+    .ul3 li {
+        float: left;
+        list-style: none;
+        padding: 0 20px 15px 20px;
+        cursor: pointer
+    }
+    
+    .ul3 li img {
+        height: 33px;
+    }
+    
+    .ul3 li.on {
+        border-bottom: 1px solid #fc9102;
+        position: relative;
+    }
+    
+    .ul3 li.on:after {
+        content: "";
+        background: url(img/多边形-2.jpg) no-repeat center center;
+        width: 8px;
+        height: 6px;
+        position: absolute;
+        left: calc(50% - 4px);
+        top: 100%;
+    }
+    
+    .abc {
+        display: none
+    }
+    .abc.on{display: block;}
+    </style>
+</head>
+
+<body>
+    <img src="img/顶部栏.jpg" width="100%">
+    <div style="padding:20px">
+        <div class="mb20"><img src="img/通知公告icon.jpg" width="100%"></div>
+        <div style="display: block;overflow:hidden" class="mb20">
+            <div>
+                <div style="float:left;width:1580px" class="abc on"><img src="img/新闻图片.jpg" style="width:1580px;height:705px"></div>
+                <div style="float:left;width:1580px" class="abc"><img src="img/要闻热播.jpg" style="width:1580px;height:705px"></div>
+                <div style="float:left;width:1580px" class="abc"><img src="img/基层水事.jpg" style="width:1580px;height:705px"></div>
+                <div style="float:left;width:1580px" class="abc"><img src="img/机关动态.jpg" style="width:1580px;height:705px"></div>
+                <div style="float:left;width:1580px" class="abc"><img src="img/媒体关注.jpg" style="width:1580px;height:705px"></div>
+            </div>
+            <ul class="ul2">
+                <li class="on"><img src="img/形状-43.jpg" width="100%"></li>
+                <li><img src="img/形状-56.jpg" width="100%"></li>
+                <li><img src="img/icon.jpg" width="100%"></li>
+                <li><img src="img/形状-53.jpg" width="100%"></li>
+                <li><img src="img/形状-55.jpg" width="100%"></li>
+            </ul>
+        </div>
+        <div class="mb20" style="display: flex;justify-content: space-between;">
+            <div style="background: url(img/表2.jpg) no-repeat center center;width:1246px;height:726px;padding:18px 30px;">
+                <ul class="ul3">
+                    <li class="on"><img src="img/形状-45.jpg" alt=""></li>
+                    <li><img src="img/形状-54.jpg" height="33"></li>
+                </ul>
+            </div>
+            <div>
+                <p class="mb20"><img src="img/防汛值班.jpg" alt=""></p>
+                <p><img src="img/通讯录.jpg" alt=""></p>
+            </div>
+        </div>
+        <div class="mb20">
+            <img src="img/单点登录.jpg" width="100%">
+        </div>
+        <div class="mb20" style="display: flex;justify-content: space-between;">
+            <div style="background: url(img/防汛抗旱.jpg) no-repeat center center;width:917px;height:303px;" class="x">
+                <ul class="ul3 aaa">
+                    <li class="on"><img src="img/形状-12.jpg" alt=""></li>
+                    <li><img src="img/形状-34-拷贝.jpg" height="33"></li>
+                </ul>
+            </div>
+            <div style="background: url(img/党的建设.jpg) no-repeat center center;width:917px;height:303px;" class="x">
+                <ul class="ul3 bbb">
+                    <li class="on"><img src="img/形状-40.jpg" alt=""></li>
+                    <li><img src="img/形状-41.jpg" height="33"></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mb20">
+            <img src="img/友情链接.jpg" width="100%">
+        </div>
+    </div>
+    <div>
+        <img src="img/底部栏.jpg" width="100%">
+    </div>
+</body>
+<script type="text/javascript">
+$(document).ready(function() {
+    $(".ul2 li").click(function() {
+        $(this).addClass("on").siblings("li").removeClass("on");
+        $(".abc").removeClass("on")
+        $(".abc").eq($(this).index()).addClass("on")
+    })
+    $(".ul3 li").click(function() {
+        $(this).addClass("on").siblings("li").removeClass("on");
+    })
+    $(".aaa li").click(function() {
+        $(this).addClass("on").siblings("li").removeClass("on");
+        if ($(this).index() == 1) {
+            $(this).parents("div.x").css("background", "url(img/防汛路上的风景…….jpg) no-repeat center center")
+        } else {
+            $(this).parents("div.x").css("background", "url(img/防汛抗旱.jpg) no-repeat center center")
+        }
+    })
+    $(".bbb li").click(function() {
+        $(this).addClass("on").siblings("li").removeClass("on");
+        if ($(this).index() == 1) {
+            $(this).parents("div.x").css("background", "url(img/法律法规.jpg) no-repeat center center")
+        } else {
+            $(this).parents("div.x").css("background", "url(img/党的建设.jpg) no-repeat center center")
+        }
+    })
+})
+</script>
+
+</html>
